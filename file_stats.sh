@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function git_history {
   git log $filename | grep "Date: "
 }

@@ -1,3 +1,4 @@
+#!/bin/bash
 # determine who are the key authors on the site; this file collects the data, another
 # (Ruby) file sorts it to determine an **extremely** primitive measure of authority
 
