@@ -9,7 +9,7 @@ It can be used to extract information only on specific file extensions.\n
 Syntax: $CMD [-h|<filetype>]
 \t-h: prints usage information
 \t<filetype>: display authors for specific filetype
-\te.g. determine_authors.sh 'js' # examines authorship for *.js files
+\te.g. determine_authors.sh js # examines authorship for *.js files
 \n"
 }
 
