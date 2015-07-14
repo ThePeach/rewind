@@ -1,19 +1,39 @@
 #!/bin/bash
-# determine who are the key authors on the site; this file collects the data, another
-# (Ruby) file sorts it to determine an **extremely** primitive measure of authority
+CMD=`basename $0`;
 
-# usage: determine_authors.sh [filetype]
-#
-# e.g.   determine_authors.sh "js"           # examines authorship for *.js files
-#        determine_authors.sh "handlebars"
-#        determine_authors.sh "ruby"
-#        determine_authors.sh "et_cetera"
-
-function generate_authors_file {
-  for filename in $(find . -iname "*.$1"); do
-    git log $filename | grep Author;
-  done
+# prints the usage message
+function usage() {
+	echo -e "$CMD is a simple script to extract the list of GIT authors from
+the files contained in the current directory.
+It can be used to extract information only on specific file extensions.\n
+Syntax: $CMD [-h|<filetype>]
+\t-h: prints usage information
+\t<filetype>: display authors for specific filetype
+\te.g. determine_authors.sh 'js' # examines authorship for *.js files
+\n"
 }
 
-generate_authors_file $1
+function extract_authors {
+    for filename in $(find . -iname "*.$1"); do
+        git log $filename | grep Author;
+    done
+}
 
+while getopts ":h" Option
+do
+    case $Option in
+        h ) usage
+            exit 0;;
+    esac
+done
+
+# initialise params
+if [ $# -eq 1 ]; then
+    EXT=$1;
+else
+    EXT='*';
+fi
+
+extract_authors "${EXT}"
+
+exit 0
