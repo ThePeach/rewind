@@ -6,7 +6,7 @@ function usage() {
 	echo -e "$CMD is a script to extract the some info on GIT authors from
 the files contained in the current directory.
 It can be used to extract information only on specific file extensions.\n
-Syntax: $CMD [-h|-o|[-c] <filetype>]
+Syntax: $CMD [-h|-o|[-c|-a|-d] <filetype>]
 \t-h: prints usage information
 \t-o: displays just the overall commits count per author
 \t-c: displays the files ordered by number of commits

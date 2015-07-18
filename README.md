@@ -31,13 +31,13 @@ Or:
 ## authorship
 
 This is more tricky, and requires Ruby. First run the
-`determine_authors.sh` script to get a count of all the authorship
+`basic_stats.sh` script to get a count of all the authorship
 events in the repo; then run the `tally_authors.rb` Ruby script to sort
 the authorship events by name.
 
 You can do all that as a one-liner in bash like this:
 
-    ruby tally_authors.rb <(cd /project && /this_dir/determine_authors.sh "js")
+    ruby tally_authors.rb <(cd /project && /this_dir/basic_stats.sh -d "js")
 
 The code isn't tricky at all, and the output is easy to understand, but
 it's also easy to misconstrue. That's the tricky part. A developer
@@ -47,7 +47,7 @@ commits to small ones, or for several other possible reasons. Exercise
 good judgement.
 
 Also, where `file_stats.sh` will examine multiple file types,
-`determine_authors.sh` and `tally_authors.rb` assumes you're only
+`basic_stats.sh` and `tally_authors.rb` assumes you're only
 working with one type of file at a time. Pull requests welcome!
 
 Caveat: Running this code against extremely large projects with very
