@@ -3,7 +3,7 @@ CMD=`basename $0`;
 
 # prints the usage message
 function usage() {
-	echo -e "$CMD is a script to extract the some info on GIT authors from
+	echo -e "$CMD is a script to extract the some info on git authors from
 the files contained in the current directory.
 It can be used to extract information only on specific file extensions.\n
 Syntax: $CMD [-h|-o|[-c|-a|-d] <filetype>]
