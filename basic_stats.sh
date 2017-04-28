@@ -3,17 +3,20 @@ CMD=`basename $0`;
 
 # prints the usage message
 function usage() {
-	echo -e "$CMD is a script to extract the some info on git authors from
+	echo -e "$CMD is a script to extract some basic info on git authors from
 the files contained in the current directory.
-It can be used to extract information only on specific file extensions.\n
+If invoked without parameters it will output the overall list of commits count
+per author (-o) followed by the list of files in the current directory with 
+the commit count for each author.
+It can also be used to extract information on specific file extensions.\n
 Syntax: $CMD [-h|-o|[-c|-a|-d] <filetype>]
-\t-h: prints usage information
+\t-h: prints this help
 \t-o: displays just the overall commits count per author
 \t-c: displays the files ordered by number of commits
 \t-a: displays overall commits, and list of commits by author per each file
 \t-d: just extract the authors, to be used in conjunction with tally_authors.rb
 \t<filetype>: display authors commit count for specific filetypes
-\te.g. determine_authors.sh js # examines authorship for *.js files
+\te.g. $CMD js # examines authorship for *.js files
 \n"
 }
 
