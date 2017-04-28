@@ -3,11 +3,11 @@ CMD=`basename $0`;
 
 # prints the usage message
 function usage() {
-	echo -e "$CMD is a script to extract some basic info on git authors from
-the files contained in the current directory.
-If invoked without parameters it will output the overall list of commits count
-per author (-o) followed by the list of files in the current directory with 
-the commit count for each author.
+	echo -e "$CMD is a script to extract some basic info on git commits and 
+authors from the files contained in the current directory.
+If invoked without parameters it will output the overall list of commits
+count per author (-o) followed by the list of files with the commit count
+for each author.
 It can also be used to extract information on specific file extensions.\n
 Syntax: $CMD [-h|-o|[-c|-a|-d] <filetype>]
 \t-h: prints this help
